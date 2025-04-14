@@ -6,3 +6,4 @@ google-cloud-storage
 google-auth
 streamlit-community-navigation-bar==4.4.1
 pymysql
+joblib
