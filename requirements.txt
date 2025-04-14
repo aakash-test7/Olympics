@@ -7,3 +7,4 @@ google-auth
 streamlit-community-navigation-bar==4.4.1
 pymysql
 joblib
+scikit-learn
