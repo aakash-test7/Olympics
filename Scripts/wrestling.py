@@ -71,7 +71,7 @@ def compute_user_rank(user_code, user_results, event_df, ranking_model):
 def wrestling_model():
     secrets = st.secrets["gcp_service_account"]
     credentials = service_account.Credentials.from_service_account_info(secrets)
-    bucket_name = "olympics-ak27"
+    bucket_name = "olympics-27"
     gcs_path = 'Model/Wrestling/simulated_ranking_model.pkl'
 
     # Load the model from GCS
