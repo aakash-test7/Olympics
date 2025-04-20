@@ -15,7 +15,7 @@ def assign_start_weight(start_order):
 def archery_model():
     secrets = st.secrets["gcp_service_account"]
     credentials = service_account.Credentials.from_service_account_info(secrets)
-    bucket_name = "olympics-ak27"
+    bucket_name = "olympics-27"
     archery_models = load_all_pickles_for_sport("Archery", bucket_name, credentials)
 
     # Extract models and scalers
