@@ -1,5 +1,15 @@
 # 🏅 TechWill x Olympics
 
+![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+
+🔗 **Live Demo:** [TechWill x Olympics](https://aakash-olympics.streamlit.app/)  
+
+[![Demo Video](demo.png)](https://youtu.be/6HVcoJIWzU0)
+
 ## 📘 Project Overview
 
 The **Olympics 2024 Insight Platform** is a full-featured, cloud-integrated web application designed to provide interactive access to detailed data from the Paris 2024 Olympics. Built for athletes, analysts, and sports enthusiasts, the project enables users to:
