@@ -4,10 +4,3 @@ backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F5F9FF"
 textColor="#262730"
 font="sans serif"
-
-[theme.additionalColors]
-olympicBlue="#0085FF"
-olympicYellow="#FFD700"
-olympicBlack="#000000"
-olympicGreen="#00AA55"
-olympicRed="#FF2D2D"
