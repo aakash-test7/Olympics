@@ -44,6 +44,15 @@ def predict_page():
         with st.spinner(f"Loading model for {sport}..."):
             st.success(f"{sport} model loaded!")
 
+    # ✅ Dummy model functions for sports not yet implemented
+    def dummy_model():
+        st.warning("This model is currently in development")
+        st.info("Olympic Prediction Model for this sport will arrive with future updates!")
+        st.markdown("""
+        Apologies for inconvenience, working hard to bring you the best predictive models for all Olympic sports.
+        Please check back later for updates!
+        """)
+
     # ✅ Render logic
     st.title("🏅 Olympic Sports Model Selector")
 
@@ -72,17 +81,22 @@ def predict_page():
 
         st.markdown(f"### :material/{icon}: {selected_sport}")
         load_model(selected_sport)
+        
+        # Model mapping - only real models for Golf, Archery, Wrestling
         model_map = {
             "Golf": golf_model,
             "Archery": archery_model,
             "Wrestling": wrestling_model
         }
-        model_map[selected_sport]()
+        
+        # Get the model function or use dummy if not available
+        model_func = model_map.get(selected_sport, dummy_model)
+        model_func()
 
         st.markdown("---")
         if st.button("❌ Cancel", use_container_width=True):
             st.session_state.sport = None
             st.rerun()
 
-if __name__=="__main__":
+if __name__ == "__main__":
     predict_page()
