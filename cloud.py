@@ -9,6 +9,7 @@ from datetime import timedelta
 from google.oauth2 import service_account
 import ast
 import joblib
+import plotly.express as px
 
 secrets = st.secrets["gcp_service_account"]
 credentials = service_account.Credentials.from_service_account_info(secrets)
@@ -154,6 +155,103 @@ def nanDataframe(df):
     
     return df_clean
 
+def plots_data():
+    athletes_df=athlete_df.copy()
+    st.title("Olympics 2024: Data Visualizations")
+
+    con=st.container(border=True)
+    with con:
+        col1,col2=st.columns([1,1])
+
+        col1.subheader("Total Medals by Country")
+        fig1 = px.bar(medals_total_df.sort_values("Total", ascending=False).head(15),
+                    x="country_long", y="Total", color="country_long",
+                    labels={"country_long": "Country", "Total": "Total Medals"},
+                    title="Top 15 Countries by Total Medals")
+        col1.plotly_chart(fig1,use_container_width=True)
+
+        col2.subheader("Medal Breakdown by Country")
+        fig2 = px.bar(medals_total_df.sort_values("Total", ascending=False).head(10),
+                    x="country_long", y=["Gold Medal", "Silver Medal", "Bronze Medal"],
+                    title="Gold, Silver, Bronze by Country")
+        col2.plotly_chart(fig2,use_container_width=True)
+
+        st.subheader("Number of Events by Sport")
+        sport_event_count = events_df['sport'].value_counts().reset_index()
+        sport_event_count.columns = ['Sport', 'Number of Events']
+        fig3 = px.bar(sport_event_count.sort_values("Number of Events", ascending=False),
+                    x="Sport", y="Number of Events",
+                    title="Number of Events by Sport")
+        st.plotly_chart(fig3,use_container_width=True)
+    
+    con=st.container(border=True)
+    with con:
+        col1,col2=st.columns([1,1])
+        col1.subheader("Medallists by Gender")
+        fig8 = px.histogram(medallists_df, x="gender", color="medal_type",
+                            barmode="group", title="Medals by Gender and Type")
+        col1.plotly_chart(fig8,use_container_width=True)
+
+        col2.subheader("Gender Distribution of Coaches")
+        fig13 = px.pie(coaches_df, names='gender', title='Coaches Gender Distribution')
+        col2.plotly_chart(fig13,use_container_width=True)
+
+    con=st.container(border=True)
+    with con:
+        st.subheader("Olympic Torch Route Timeline")
+        torch_route_df["date_start"] = pd.to_datetime(torch_route_df["date_start"])
+        fig4 = px.timeline(torch_route_df.sort_values("date_start"),
+                        x_start="date_start", x_end="date_end",
+                        y="city", color="title", title="Torch Relay Timeline")
+        st.plotly_chart(fig4)
+
+        st.subheader("Scheduled Events Overview")
+        fig5 = px.treemap(schedules_df, path=["discipline"], values=None,
+                        title="Event Schedule by Discipline (Treemap)")
+        st.plotly_chart(fig5)
+
+    con=st.container(border=True)
+    with con:
+        col1,col2=st.columns([1,1])
+        col1.subheader("Number of Coaches by Country")
+        coach_country_count = coaches_df['country_long'].value_counts().reset_index()
+        coach_country_count.columns = ['Country', 'Coach Count']
+        fig6 = px.bar(coach_country_count.head(10), x='Country', y='Coach Count',
+                    title='Top 10 Countries by Number of Coaches')
+        col1.plotly_chart(fig6,use_container_width=True)
+
+        col2.subheader("Number of Sports per Venue")
+        venue_df = venues_df.copy()
+        venue_df['sport_count'] = venue_df['sports'].apply(lambda x: len(eval(x)) if pd.notnull(x) else 0)
+        fig9 = px.bar(venue_df.sort_values("sport_count", ascending=False),
+                    x="venue", y="sport_count", title="Number of Sports per Venue")
+        col2.plotly_chart(fig9,use_container_width=True)
+
+    con=st.container(border=True)
+    with con:
+        st.subheader("Number of Athletes per Country")
+        athlete_country_count = athletes_df['country_long'].value_counts().reset_index()
+        athlete_country_count.columns = ['Country', 'Athlete Count']
+        fig10 = px.bar(athlete_country_count.head(10), x='Country', y='Athlete Count',
+                    title="Top 10 Countries by Athlete Participation")
+        st.plotly_chart(fig10)
+
+        st.subheader("Events Scheduled Per Day")
+        schedules_df["start_date"] = pd.to_datetime(schedules_df["start_date"])
+        daily_event_count = schedules_df["start_date"].dt.date.value_counts().reset_index()
+        daily_event_count.columns = ["Date", "Event Count"]
+        fig11 = px.line(daily_event_count.sort_values("Date"), x="Date", y="Event Count",
+                        markers=True, title="Number of Events Scheduled Per Day")
+        st.plotly_chart(fig11)
+
+        st.subheader("Medals Awarded by Discipline")
+        medals_discipline_count = medals_df['discipline'].value_counts().reset_index()
+        medals_discipline_count.columns = ['Discipline', 'Medal Count']
+        fig12 = px.bar(medals_discipline_count.head(10), x='Discipline', y='Medal Count',
+                    title="Top 10 Disciplines by Medals Awarded")
+        st.plotly_chart(fig12)
+    return
+    
 def show_data_main():
     with st.container(border=True):
         with st.expander("athletes.csv", expanded=False):
