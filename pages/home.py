@@ -11,12 +11,14 @@ def home_page():
     }
     
     .main-title {
-        font-size: 6.5rem;
-        background: linear-gradient(90deg, #FFD700, #C0C0C0, #CD7F32);
+        font-size: 8rem; /* Increased for greater emphasis */
+        font-weight: 900;
+        background: linear-gradient(90deg, #8B8000, #555555, #6A3805); /* Darker gold/silver/bronze tones */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.05em;
     }
     
     .pulse {
@@ -49,7 +51,7 @@ def home_page():
     """, unsafe_allow_html=True)
     
     # Hero Section with animated title
-    st.markdown('<h1 class="main-title pulse">TechWill x Olympics</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-title pulse">TECHWILL X OLYMPICS</h1>', unsafe_allow_html=True)
     st.markdown("""
     <div style="text-align: center; margin-bottom: 3rem;">
         <p style="font-size: 1.2rem; color: #666;">Future Games Begin Here</p>
