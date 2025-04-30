@@ -6,12 +6,13 @@ from Scripts.wrestling import wrestling_model
 def predict_page():
     
     sports = [
-        "Golf", "Beach Volleyball", "Judo", "Equestrian", "Taekwondo", "Artistic Gymnastics",
+        "Golf", "Archery", "Wrestling",
+        "Beach Volleyball", "Judo", "Equestrian", "Taekwondo", "Artistic Gymnastics",
         "Cycling BMX Racing", "Cycling Mountain Bike", "Badminton", "Water Polo", "Canoe Slalom",
         "Breaking", "Football", "Trampoline Gymnastics", "Boxing", "Sport Climbing", "Basketball",
-        "Cycling Road", "Handball", "Archery", "Weightlifting", "Athletics", "Hockey", "Surfing",
+        "Cycling Road", "Handball", "Weightlifting", "Athletics", "Hockey", "Surfing",
         "Sailing", "Shooting", "Volleyball", "Tennis", "Triathlon", "Swimming", "Canoe Sprint",
-        "Marathon Swimming", "Rugby Sevens", "Wrestling", "Fencing", "Diving", "Cycling BMX Freestyle",
+        "Marathon Swimming", "Rugby Sevens", "Fencing", "Diving", "Cycling BMX Freestyle",
         "Modern Pentathlon", "Table Tennis", "Skateboarding", "Rhythmic Gymnastics", "3x3 Basketball",
         "Artistic Swimming", "Cycling Track", "Rowing"
     ]
