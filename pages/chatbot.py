@@ -4,18 +4,7 @@ import time
 
 # Configure Gemini with your API key
 gemini_key = st.secrets["gemini_api_key"]["GEMINI_API_KEY"]
-
 genai.configure(api_key=gemini_key)
-
-# Initialize session state
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "TechWill x Olympics !!! Ask anything about Olympics "}
-    ]
-if "rate_limit_exceeded" not in st.session_state:
-    st.session_state.rate_limit_exceeded = False
-if "last_request_time" not in st.session_state:
-    st.session_state.last_request_time = 0
 
 def handle_rate_limit():
     st.session_state.rate_limit_exceeded = True
@@ -58,6 +47,16 @@ def get_gemini_response(prompt):
         return None
 
 def chat_page():
+    # Initialize session state
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {"role": "assistant", "content": "TechWill x Olympics !!! Ask anything about Olympics "}
+        ]
+    if "rate_limit_exceeded" not in st.session_state:
+        st.session_state.rate_limit_exceeded = False
+    if "last_request_time" not in st.session_state:
+        st.session_state.last_request_time = 0
+
     st.title("🏆 Olympics Chatbot 🤖")
     st.caption("Aakash Kharb - GoogleCloudProjects")
     
