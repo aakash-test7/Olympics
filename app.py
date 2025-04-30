@@ -1,8 +1,10 @@
 import streamlit as st
-st.set_page_config(page_title="ChickpeaOmicsExplorer", layout="wide",initial_sidebar_state="collapsed")
+st.set_page_config(page_title="TechWillxOlympics", layout="wide",initial_sidebar_state="collapsed")
 from streamlit_navigation_bar import st_navbar
 import pages as pg
 import time
+from pages.security_login import update_visitor_count
+
 #from pages.security_login import basic_stats, update_visitor_count
 st.logo("logo.gif")
 st.markdown("""
@@ -73,6 +75,26 @@ page = st_navbar(pages, urls=urls, styles=styles, options=options) #logo_path=lo
 if page != st.session_state.current_page:
     st.session_state.current_page = page
 
+#visitor
+if 'first_access' not in st.session_state:
+    st.session_state.first_access = True
+if 'visitor_count' not in st.session_state:
+    st.session_state.visitor_count = 0
+if 'display_count' not in st.session_state:
+    st.session_state.display_count = True
+
+if st.session_state.first_access:
+    st.session_state.visitor_count = update_visitor_count()
+
+if st.session_state.display_count:
+    st.toast(f"Visitor Count : {st.session_state.visitor_count}")
+    st.session_state.display_count = False
+
+if st.sidebar.button("Site Stats",use_container_width=True):
+    visitor_count = update_visitor_count()
+    st.sidebar.subheader(f"Total Visitors : {visitor_count}")
+    st.toast(f"Total visitors: {visitor_count}")
+
 #st.sidebar.markdown("---")  # Adds a separator
 st.markdown(
     """
@@ -124,6 +146,10 @@ olympics_resources = {
     "Olympic History & Results": "https://www.sports-reference.com/olympics"
 }
 
+st.sidebar.title("Aakash Kharb")
+st.sidebar.subheader("Project - I")
+st.sidebar.subheader("Exam Roll No. : 2080033")
+st.sidebar.subheader("B.Tech AIML 6 sem")
 
 st.sidebar.subheader("Important Resources")
 for name, link in olympics_resources.items():
