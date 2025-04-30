@@ -9,3 +9,4 @@ pymysql
 joblib
 scikit-learn
 google-generativeai
+plotly
