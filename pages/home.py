@@ -39,7 +39,7 @@ def home_page():
 
     # Project Overview
     con=st.container(border=True, key="con12hp")
-    st.markdown("""<style>.stVerticalBlock.st-key-con12hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con12hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    st.markdown("""<style>.stVerticalBlock.st-key-con12hp {background-color: rgba(61, 204, 219,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con12hp:hover {background-color: rgba(61, 204, 219,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
     con.markdown("## 📘 Project Overview")
     con.markdown("""
 A feature-rich, cloud-integrated web application offering real-time data exploration, medal prediction, and a Gemini-powered chatbot for the Paris 2024 Olympics.
@@ -52,7 +52,7 @@ A feature-rich, cloud-integrated web application offering real-time data explora
 
     # Key Features
     con=st.container(border=True, key="con13hp")
-    st.markdown("""<style>.stVerticalBlock.st-key-con13hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con13hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    st.markdown("""<style>.stVerticalBlock.st-key-con13hp {background-color: rgba(61, 204, 219,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con13hp:hover {background-color: rgba(61, 204, 219,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
     con.markdown("## 🚀 Key Features")
     col1, col2 = con.columns(2)
     with col1:
@@ -81,7 +81,7 @@ A feature-rich, cloud-integrated web application offering real-time data explora
 
     # Tech Stack
     con=st.container(border=True, key="con14hp")
-    st.markdown("""<style>.stVerticalBlock.st-key-con14hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con14hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    st.markdown("""<style>.stVerticalBlock.st-key-con14hp {background-color: rgba(61, 204, 219,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con14hp:hover {background-color: rgba(61, 204, 219,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
     with con:
         st.markdown("## 🧰 Tech Stack")
         tech_stack = st.columns(4)
