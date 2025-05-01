@@ -1,128 +1,121 @@
 import streamlit as st
 
-def home_page():    
-        
+def home_page():
+    # Basic CSS for styling
     st.markdown("""
     <style>
     .feature-card {
-        border-radius: 15px;
-        padding: 1.5rem;
+        border-radius: 12px;
+        padding: 1.25rem;
         margin-bottom: 1rem;
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
+        background: #F5F9FF;
+        border: 1px solid #ddd;
         transition: all 0.3s ease;
     }
-    
     .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        background: rgba(255,255,255,0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        background: #fff;
     }
-    
+    .center-title {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+    .footer {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 3rem;
+        border-radius: 8px;
+    }
     </style>
     """, unsafe_allow_html=True)
-    
-    # University Header
-    st.markdown("""
-    <div style="text-align: center; margin-bottom: 1rem;">
-        <h2>UNIVERSITY INSTITUTE OF ENGINEERING & TECHNOLOGY</h2>
-        <h3>MAHARSHI DAYANAND UNIVERSITY, ROHTAK</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Project Title Section
-    st.markdown('<h2 style="text-align: center;">LC-CSE-350G Project</h2>', unsafe_allow_html=True)
-    st.markdown("""
-    <div style="text-align: center; margin-bottom: 3rem;">
-        <p style="font-size: 1.2rem; color: #666;">Semester - 6th</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Project Information
-    with st.container():
-        cols = st.columns([1,1])
-        with cols[0]:
-            st.markdown("### Submitted To:")
-            st.markdown("""
-            <div style="padding: 1rem; background: #f0f2f6; border-radius: 10px;">
-                <p><b>Dr. Yogesh</b></p>
-                <p><b>⠀</b></p>
-                <p><b>⠀</b></p>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        with cols[1]:
-            st.markdown("### Submitted By:")
-            st.markdown("""
-            <div style="padding: 1rem; background: #f0f2f6; border-radius: 10px;">
-                <p><b>Aakash</b></p>
-                <p><b>Roll No:</b> 2080033</p>
-                <p><b>Program:</b> B.Tech. AIML</p>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Project Features
-    st.markdown("---")
-    st.markdown("## 🚀 Project Features")
-    
-    with st.expander("📚 Project Overview", expanded=True):
+
+    # Centered title
+    st.markdown('<h1 class="center-title" style="font-size: 8rem;">TECHWILL x OLYMPICS</h1>', unsafe_allow_html=True)
+
+    # Project Overview
+    con=st.container(border=True, key="con12hp")
+    st.markdown("""<style>.stVerticalBlock.st-key-con12hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con12hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    con.markdown("## 📘 Project Overview")
+    con.markdown("""
+A feature-rich, cloud-integrated web application offering real-time data exploration, medal prediction, and a Gemini-powered chatbot for the Paris 2024 Olympics.
+
+- 📊 **Explore Olympic Data**: Access structured data for athletes, events, and medals.
+- 🥇 **Medal Predictions**: Simulate outcomes using past trends and AI logic.
+- 🤖 **AI Chatbot**: Retrieve insights about schedules, venues, and sports rules.
+- ☁️ **Cloud-Powered**: Hosted on Google Cloud for high scalability and reliability.
+    """)
+
+    # Key Features
+    con=st.container(border=True, key="con13hp")
+    st.markdown("""<style>.stVerticalBlock.st-key-con13hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con13hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    con.markdown("## 🚀 Key Features")
+    col1, col2 = con.columns(2)
+    with col1:
         st.markdown("""
-        This academic project demonstrates the application of:
-        - Cloud computing concepts using Google Cloud Platform
-        - Data analysis and visualization techniques
-        - Machine learning for predictive modeling
-        - Streamlit for interactive web applications
+        <div class="feature-card">
+            <h4>📊 Data Visualization</h4>
+            <p>Dynamic visuals for medals, athletes, and event stats.</p>
+        </div>
+        <div class="feature-card">
+            <h4>☁️ Cloud Integration</h4>
+            <p>GCP-hosted datasets accessed via `cloud.py` module.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("""
+        <div class="feature-card">
+            <h4>🤖 Gemini Chatbot</h4>
+            <p>Context-aware answers on Olympic events and participants.</p>
+        </div>
+        <div class="feature-card">
+            <h4>📈 Medal Predictions</h4>
+            <p>Simulate outcomes with athlete/event-level insights.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Tech Stack
+    con=st.container(border=True, key="con14hp")
+    st.markdown("""<style>.stVerticalBlock.st-key-con14hp {background-color: rgba(143,180,221,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con14hp:hover {background-color: rgba(143,180,221,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} </style>""", unsafe_allow_html=True)
+    with con:
+        st.markdown("## 🧰 Tech Stack")
+        tech_stack = st.columns(4)
+        tech_stack[0].markdown("🔹 **Python**")
+        tech_stack[1].markdown("🔹 **Streamlit**")
+        tech_stack[2].markdown("🔹 **Google Cloud**")
+        tech_stack[3].markdown("🔹 **Gemini AI**")
+
+        # Repo structure
+        st.markdown("## 🗂️ Repository Structure")
+        st.code("""
+    Olympics/
+    ├── app.py                # Main entry point
+    ├── cloud.py              # GCS integration
+    ├── pages/
+    │   ├── home.py
+    │   ├── dataset_page.py
+    │   ├── prediction.py
+    │   ├── chatbot.py
+    │   ├── information.py
+    |   └── tutorial.py          
+    └── scripts/
+        ├── archery.py
+        ├── golf.py
+        └── wrestling.py
         """)
-    
-    feature_cols = st.columns(2)
-    
-    with feature_cols[0]:
-        st.markdown("""
-        <div class="feature-card">
-            <h3>📊 Data Analysis</h3>
-            <p>Comprehensive analysis of Olympic datasets with interactive visualizations</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="feature-card">
-            <h3>☁️ Cloud Integration</h3>
-            <p>Google Cloud Storage for dataset hosting and retrieval</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with feature_cols[1]:
-        st.markdown("""
-        <div class="feature-card">
-            <h3>🤖 AI Chatbot</h3>
-            <p>Gemini-powered assistant for Olympic information retrieval</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="feature-card">
-            <h3>📈 Predictive Models</h3>
-            <p>Medal prediction using machine learning algorithms</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    # Technology Stack
-    st.markdown("---")
-    st.markdown("## 🛠️ Technology Stack")
-    tech_cols = st.columns(4)
-    tech_cols[0].markdown("**Python**")
-    tech_cols[1].markdown("**Streamlit**")
-    tech_cols[2].markdown("**Google Cloud**")
-    tech_cols[3].markdown("**Gemini AI**")
-    
-    # Academic Purpose Notice
-    st.markdown("---")
+
+    # Footer
     st.markdown("""
-    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-        <p><i>This project has been developed purely for academic purposes as part of the 6th semester curriculum at UIET, MDU Rohtak.</i></p>
+    <div class="footer">
+        © Aakash Kharb
     </div>
     """, unsafe_allow_html=True)
 
+# Run the page
 if __name__ == "__main__":
     home_page()
