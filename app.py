@@ -146,12 +146,7 @@ olympics_resources = {
     "Olympic History & Results": "https://www.sports-reference.com/olympics"
 }
 
-st.sidebar.title("Aakash Kharb")
-st.sidebar.subheader("Project - I")
-st.sidebar.subheader("Exam Roll No. : 2080033")
-st.sidebar.subheader("B.Tech AIML 6 sem")
-
-st.sidebar.subheader("Important Resources")
+st.sidebar.title("Important Resources")
 for name, link in olympics_resources.items():
     st.sidebar.markdown(
     f'<a href="{link}" target="_blank" style="text-decoration: none;" class="sidebar-button">{name}</a>',
