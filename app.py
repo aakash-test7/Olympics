@@ -15,7 +15,7 @@ st.markdown("""
             }
             </style>
             """, unsafe_allow_html=True)
-pages = ["Home", "Dataset", "Information", "Prediction", "Chatbot", "Aakash"]
+pages = ["Home", "Dataset", "Information", "Prediction", "Chatbot", "Tutorial", "Aakash"]
 #logo_path = ("logo.svg")
 urls = {"Aakash": "https://linkedin.com/in/aakash-kharb"}
 options={"use_padding": True, "show_menu":False}
@@ -163,6 +163,7 @@ functions = {
     "Information": pg.info_page,
     "Prediction": pg.predict_page,
     "Chatbot": pg.chat_page,
+    "Tutorial": pg.tutorial_page
 }
 
 go_to = functions.get(st.session_state.current_page)
