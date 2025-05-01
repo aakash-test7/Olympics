@@ -56,7 +56,8 @@ Olympics/
 │   ├── dataset_page.py   # Data explorer for athletes, medals, and events
 │   ├── prediction.py     # Medal prediction simulation
 │   ├── chatbot.py        # Natural language chatbot interface
-│   └── information.py    # Event details, schedules, venues
+│   ├── information.py    # Event details, schedules, venues
+│   └── tutorial.py       # Video demonstrations
 │
 └── scripts/              # Discipline-specific data analysis
     ├── archery.py
