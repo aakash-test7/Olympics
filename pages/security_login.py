@@ -41,7 +41,7 @@ def initialize_database():
 def connect_to_db():
     mysql_config = st.secrets["mysql"]
     return pymysql.connect(host=mysql_config["host"], user=mysql_config["user"], password=mysql_config["password"],
-                            port=mysql_config["port"], database="Recommender", ssl={"ssl_disabled": True})
+                            port=mysql_config["port"], database="Olympics", ssl={"ssl_disabled": True})
 
 def update_visitor_count():
     conn4 = connect_to_db()
