@@ -15,7 +15,7 @@ def tutorial_page():
     def generate_signed_url(blob_name, expiration_minutes=30):
         """Generate a signed URL for temporary access to a GCS object"""
         try:
-            bucket = client.bucket("olympics-27")
+            bucket = client.bucket("olympics-3")
             blob = bucket.blob(blob_name)
             
             if not blob.exists():
