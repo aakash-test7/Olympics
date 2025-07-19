@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 def golf_model():
     secrets = st.secrets["gcp_service_account"]
     credentials = service_account.Credentials.from_service_account_info(secrets)
-    bucket_name = "olympics-27"
+    bucket_name = "olympics-3"
     golf_models = load_all_pickles_for_sport("Golf", bucket_name, credentials)
 
     # Try to load all required objects
