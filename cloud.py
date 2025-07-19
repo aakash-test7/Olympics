@@ -20,7 +20,7 @@ from datetime import timedelta
 def generate_signed_url(blob_name):
     """Generates a signed URL to access a file in GCS."""
     try:
-        bucket_name = "olympics-27"
+        bucket_name = "olympics-3"
         client = storage.Client(credentials=credentials)
         # Use `client.bucket()` instead of `get_bucket()` to avoid needing storage.buckets.get
         bucket = client.bucket(bucket_name)
@@ -41,7 +41,7 @@ def generate_signed_url(blob_name):
 # Initialize the Google Cloud Storage client
 client = storage.Client(credentials=credentials)
 
-bucket_name = "olympics-27"
+bucket_name = "olympics-3"
 
 def read_excel_from_gcs(bucket_name, blob_name, header=0):
     bucket = client.bucket(bucket_name)
