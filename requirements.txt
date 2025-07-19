@@ -1,7 +1,7 @@
 pandas
 numpy
 requests
-streamlit
+streamlit==1.43
 google-cloud-storage
 google-auth
 streamlit-community-navigation-bar==4.4.1
