@@ -1,0 +1,12 @@
+pandas
+numpy
+requests
+streamlit==1.45
+google-cloud-storage
+google-auth
+streamlit-community-navigation-bar==4.4.1
+pymysql
+joblib
+scikit-learn
+google-generativeai
+plotly
